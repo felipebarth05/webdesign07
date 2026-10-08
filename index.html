@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,24 +10,32 @@
 
 <body>
 
+    <!-- CABEÇALHO -->
     <header>
         <div class="logo">☕ Sabor & Café</div>
 
-        <nav>
+        <nav aria-label="Navegação principal">
             <a href="#">Início</a>
             <a href="#produtos">Produtos</a>
+            <a href="#reservas">Reservar mesa</a>
             <a href="#contato">Contato</a>
         </nav>
     </header>
 
+    <!-- CONTEÚDO PRINCIPAL -->
     <main>
 
+        <!-- BANNER -->
         <section class="banner">
             <h1>Bem-vindo à Sabor & Café</h1>
             <p>Café, doces e salgados preparados com carinho.</p>
             <a href="#produtos" class="botao">Ver produtos</a>
+            <a href="#reservas" class="botao botao-secundario">
+                Reservar uma mesa
+            </a>
         </section>
 
+        <!-- PRODUTOS -->
         <section id="produtos" class="produtos">
             <h2>Nossos Produtos</h2>
 
@@ -175,12 +184,317 @@
             </div>
         </section>
 
+        <!-- RESERVA DE MESAS -->
+        <section id="reservas" class="reservas">
+
+            <div class="reserva-introducao">
+                <p class="texto-destaque">Sua pausa especial</p>
+
+                <h2>Reserve sua mesa</h2>
+
+                <p>
+                    Planeje sua visita à Sabor & Café.
+                    Preencha os dados abaixo para solicitar
+                    uma reserva.
+                </p>
+
+                <div class="reserva-beneficios">
+
+                    <div class="beneficio">
+                        <span class="beneficio-icone" aria-hidden="true">☕</span>
+
+                        <div>
+                            <h3>Um café especial</h3>
+                            <p>
+                                Esperamos você para uma pausa deliciosa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio">
+                        <span class="beneficio-icone" aria-hidden="true">♡</span>
+
+                        <div>
+                            <h3>Momentos compartilhados</h3>
+                            <p>
+                                Escolha o horário e venha com sua companhia.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio">
+                        <span class="beneficio-icone" aria-hidden="true">✓</span>
+
+                        <div>
+                            <h3>Pedido simples</h3>
+                            <p>
+                                Informe seus dados pelo formulário.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- FORMULÁRIO -->
+            <div class="reserva-cartao">
+
+                <h2>Dados da reserva</h2>
+
+                <p class="reserva-subtitulo">
+                    Os campos marcados com * são obrigatórios.
+                </p>
+
+                <form id="form-reserva">
+
+                    <div class="campo">
+                        <label for="nome">Nome completo *</label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            autocomplete="name"
+                            minlength="3"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone para contato *</label>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="(15) 99999-9999"
+                            autocomplete="tel"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo-linha">
+
+                        <div class="campo">
+                            <label for="data">Data da reserva *</label>
+
+                            <input
+                                type="date"
+                                id="data"
+                                name="data"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="horario">Horário *</label>
+
+                            <select id="horario" name="horario" required>
+                                <option value="">Selecione</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="campo">
+                        <label for="pessoas">Quantidade de pessoas *</label>
+
+                        <select id="pessoas" name="pessoas" required>
+                            <option value="">Selecione a quantidade</option>
+                            <option value="1">1 pessoa</option>
+                            <option value="2">2 pessoas</option>
+                            <option value="3">3 pessoas</option>
+                            <option value="4">4 pessoas</option>
+                            <option value="5">5 pessoas</option>
+                            <option value="6">6 pessoas</option>
+                            <option value="7">7 pessoas</option>
+                            <option value="8">8 pessoas</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="observacoes">
+                            Observações (opcional)
+                        </label>
+
+                        <textarea
+                            id="observacoes"
+                            name="observacoes"
+                            rows="4"
+                            maxlength="500"
+                            placeholder="Alguma informação importante para sua visita?"
+                        ></textarea>
+                    </div>
+
+                    <div class="campo campo-checkbox">
+                        <input
+                            type="checkbox"
+                            id="confirmacao"
+                            name="confirmacao"
+                            required
+                        >
+
+                        <label for="confirmacao">
+                            Confirmo que os dados informados estão corretos. *
+                        </label>
+                    </div>
+
+                    <button type="submit" class="botao-reserva">
+                        Solicitar reserva
+                    </button>
+
+                    <p class="aviso-reserva">
+                        Esta demonstração não confirma disponibilidade real
+                        nem envia os dados para a cafeteria. Aguarde a
+                        confirmação da equipe por um canal oficial.
+                    </p>
+
+                    <div
+                        id="mensagem-reserva"
+                        class="mensagem-reserva"
+                        role="status"
+                        aria-live="polite"
+                        hidden
+                    ></div>
+
+                </form>
+            </div>
+
+        </section>
+
+        <!-- INFORMAÇÕES ADICIONAIS -->
+        <section class="informacoes">
+
+            <h2>Venha nos visitar</h2>
+
+            <p>
+                Um ambiente acolhedor para aproveitar
+                seu café favorito.
+            </p>
+
+            <a class="link-reserva" href="#reservas">
+                Faça sua solicitação de reserva
+            </a>
+
+        </section>
+
     </main>
 
+    <!-- RODAPÉ -->
     <footer id="contato">
         <p>© 2026 Sabor & Café</p>
         <p>Rua Principal, 100 - Centro</p>
+        <p>Esperamos sua visita!</p>
     </footer>
+
+    <!-- JAVASCRIPT DA RESERVA -->
+    <script>
+        const formularioReserva =
+            document.getElementById("form-reserva");
+
+        const campoData =
+            document.getElementById("data");
+
+        const mensagemReserva =
+            document.getElementById("mensagem-reserva");
+
+        // Define a data mínima como o dia atual.
+        const hoje = new Date();
+
+        const ano = hoje.getFullYear();
+
+        const mes = String(
+            hoje.getMonth() + 1
+        ).padStart(2, "0");
+
+        const dia = String(
+            hoje.getDate()
+        ).padStart(2, "0");
+
+        campoData.min = `${ano}-${mes}-${dia}`;
+
+        // Processa o formulário no navegador.
+        formularioReserva.addEventListener(
+            "submit",
+            function (evento) {
+
+                evento.preventDefault();
+
+                // Verifica os campos obrigatórios.
+                if (!formularioReserva.checkValidity()) {
+                    formularioReserva.reportValidity();
+                    return;
+                }
+
+                // Recupera os dados digitados.
+                const dados = new FormData(formularioReserva);
+
+                const nome = dados.get("nome").trim();
+
+                const dataSelecionada = dados.get("data");
+
+                const horario = dados.get("horario");
+
+                const pessoas = dados.get("pessoas");
+
+                // Formata a data para dia/mês/ano.
+                const partesData = dataSelecionada.split("-");
+
+                const dataFormatada =
+                    `${partesData[2]}/${partesData[1]}/${partesData[0]}`;
+
+                // Exibe a mensagem de solicitação.
+                mensagemReserva.hidden = false;
+
+                mensagemReserva.className =
+                    "mensagem-reserva mensagem-sucesso";
+
+                mensagemReserva.textContent =
+                    `Solicitação demonstrativa registrada para ${nome}: ` +
+                    `${dataFormatada}, às ${horario}, para ${pessoas} pessoa(s). ` +
+                    `Esta mensagem não significa que a mesa foi confirmada. ` +
+                    `Entre em contato com a cafeteria para confirmar a disponibilidade.`;
+
+                // Leva o usuário até a mensagem.
+                mensagemReserva.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
+            }
+        );
+
+        // Oculta a mensagem quando o usuário altera os dados.
+        formularioReserva.addEventListener(
+            "input",
+            function () {
+
+                if (!mensagemReserva.hidden) {
+
+                    mensagemReserva.hidden = true;
+
+                    mensagemReserva.textContent = "";
+
+                    mensagemReserva.className = "mensagem-reserva";
+                }
+            }
+        );
+    </script>
 
 </body>
 </html>
+```
